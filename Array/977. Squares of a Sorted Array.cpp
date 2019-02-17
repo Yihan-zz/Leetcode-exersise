@@ -18,6 +18,7 @@ vector<int> merge(vector<int> A, vector<int> B){
             res.push_back(B[j++]);
         }
     }
+    
     if(j>=B.size()){
         while(i<A.size()){
             res.push_back(A[i++]);
