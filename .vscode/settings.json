@@ -2,6 +2,7 @@
     "python.linting.pylintEnabled": true,
     "code-runner.runInTerminal": true,
     "files.associations": {
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "iostream": "cpp"
     },
 }

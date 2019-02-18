@@ -24,7 +24,7 @@ vector<int> sumEvenAfterQueries(vector<int>& A, vector<vector<int>>& queries) {
 int main(){
     int a[7]={17,13,11,2,3,5,7};
     vector<int> b(a,a+7);
-    vector<int> res = sumEvenAfterQueries(b);
+    vector<int> res ;
     for(int i = 0; i < res.size(); i++)
     {
         cout<<res[i]<<" ";
