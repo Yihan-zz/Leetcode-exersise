@@ -39,4 +39,5 @@
         "typeinfo": "cpp",
         "utility": "cpp"
     },
+    "cmake.configureOnOpen": true,
 }
