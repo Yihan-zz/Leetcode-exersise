@@ -14,34 +14,19 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> res = {0, 0};
-        map<int, vector<int>> mapTabel;
+        map<int, int> mapTabel;
         for (int i = 0; i < nums.size(); i++)
         {
-            if (mapTabel.find(nums[i]) == mapTabel.end()) {
-                vector<int> tmp = {i};
-                mapTabel[nums[i]] = tmp;
-            } else {
-                mapTabel[nums[i]].push_back(i);
-            }
-            
+            mapTabel[nums[i]] = i;
         }
 
         for (int i = 0; i < nums.size(); i++)
         {   
-            map<int, vector<int>>::iterator it = mapTabel.find(target - nums[i]);
-            if (it != mapTabel.end()) {
-                if (nums[i] == target - nums[i]) {
-                    if (mapTabel[nums[i]].size() > 1){
-                        res[0] = mapTabel[nums[i]][0];
-                        res[1] = mapTabel[nums[i]][1];
-                        return res;
-                    }
-                } else {
-                    res[0] = mapTabel[nums[i]][0];
-                    res[1] = mapTabel[target - nums[i]][0];
-                    return res;
-                }
-                
+            map<int, int>::iterator it = mapTabel.find(target - nums[i]);
+            if (it != mapTabel.end() && it->second != i) {
+                res[0] = i;
+                res[1] = mapTabel[target - nums[i]];
+                return res;
             }
         }
         return res;
